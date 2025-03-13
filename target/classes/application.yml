@@ -1,0 +1,2 @@
+youtube-dl:
+  path: /usr/local/bin/yt-dlp  # 使用yt-dlp作为youtube-dl的替代品，因为它更新更频繁 
