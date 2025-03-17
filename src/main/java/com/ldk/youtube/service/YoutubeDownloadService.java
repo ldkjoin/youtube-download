@@ -405,8 +405,9 @@ public class YoutubeDownloadService {
     private String getFormatSelector(String quality) {
         // 检查quality是否是format_id（数字形式）
         if (quality.matches("\\d+")) {
-            // 如果是format_id，直接使用该ID
-            return quality;
+            // 如果是format_id，使用该ID并添加最佳音频流
+            // 格式：特定视频ID+最佳音频/最佳可用格式
+            return quality + "+bestaudio/best";
         }
         
         // 否则按照清晰度处理
