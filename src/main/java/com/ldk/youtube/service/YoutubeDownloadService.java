@@ -403,6 +403,13 @@ public class YoutubeDownloadService {
      * 根据质量参数获取yt-dlp格式选择器
      */
     private String getFormatSelector(String quality) {
+        // 检查quality是否是format_id（数字形式）
+        if (quality.matches("\\d+")) {
+            // 如果是format_id，直接使用该ID
+            return quality;
+        }
+        
+        // 否则按照清晰度处理
         switch (quality) {
             case "1080p":
                 return "bestvideo[height<=1080]+bestaudio/best[height<=1080]/best";
